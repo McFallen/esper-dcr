@@ -48,5 +48,6 @@
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:0.9.28" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations-java5:16.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:19.0" level="project" />
   </component>
 </module>
