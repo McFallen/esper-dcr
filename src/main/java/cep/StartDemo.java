@@ -20,7 +20,7 @@ public class StartDemo {
     /**
      * Main method - start the Demo!
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
 
         int graphID = 8349;
         LOG.debug("Starting...");
@@ -35,6 +35,7 @@ public class StartDemo {
         }
         // Set up DCR communicator
         DCRGraphCommunicator.setGraphID(graphID);
+        // DCRGraphCommunicator.setupTestSimulations();
 
         // Set up Correlator, load current sims.
         CorrelationService.initCorrelationService();

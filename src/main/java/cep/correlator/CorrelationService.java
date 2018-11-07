@@ -2,6 +2,7 @@ package cep.correlator;
 
 import cep.communicator.DCRGraphCommunicator;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +27,8 @@ public class CorrelationService {
     private static HashMap<String, List<Integer>> variableHash;
 
     // No pretty way to do bidirectional map. Can be optimized with a tool, for now we leave hardcoded
-    private static HashMap<String, String> activityIDtoVariable = new HashMap<String, String>(){ { put("robotID", "Activity14"); } };
-    private static HashMap<String, String> variableToActivityID = new HashMap<String, String>(){ { put("Activity14", "robotID"); } };
+    private static HashMap<String, String> activityIDtoVariable = new HashMap<String, String>(){ { put("robotID", "Activity14");put("shelfID", "Activity10"); } };
+    private static HashMap<String, String> variableToActivityID = new HashMap<String, String>(){ { put("Activity14", "robotID");put("Activity10", "shelfID"); } };
 
     public static void initCorrelationService() {
         simHash = DCRGraphCommunicator.fetchSimulationsIndexed();
@@ -37,13 +38,16 @@ public class CorrelationService {
     private static void initActivityAndVariableHash() {
         HashMap<Integer, JSONObject> activityHash = new HashMap<Integer, JSONObject>();
         HashMap<String, Integer> variableHash = new HashMap<String, Integer>();
-        Iterator iterSims = simHash.keySet().iterator();
-        while (iterSims.hasNext()) {
-            Integer simId = (Integer) iterSims.next();
+        for (Object o : simHash.keySet()) {
+            Integer simId = (Integer) o;
             activityHash.put(simId, DCRGraphCommunicator.fetchSimulationActivities(simId));
-            JSONObject variables = DCRGraphCommunicator.fetchSimulationData(simId);
-            if (variables != null){
+            JSONArray variables = DCRGraphCommunicator.fetchSimulationData(simId);
 
+            if (variables != null) {
+                for (Object var : variables) {
+                    ((JSONObject) var).get("id");
+                    ((JSONObject) var).get("value");
+                }
             }
             //            System.out.println(variables);
 //            variableHash.put(simId, );

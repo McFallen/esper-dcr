@@ -1,8 +1,8 @@
 package cep.communicator;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import com.google.common.base.CharMatcher;
 import org.json.JSONObject;
@@ -22,9 +22,11 @@ public final class DCRGraphCommunicator {
 
 
     public static int createSimulation() {
-        return 0;
-    }
+        String url = baseUrl + graphID + "/sims";
+        HttpResponse resp = sendPostRequest(url,"");
 
+        return Integer.parseInt(resp.getHeaders().get("X-DCR-simulation-ID").get(0));
+    }
     private static JSONObject fetchSimulationsMixed(){
         String url = baseUrl + graphID + "/sims/";
         HttpResponse resp = sendGetRequest(url);
@@ -53,38 +55,45 @@ public final class DCRGraphCommunicator {
         return simActivities;
     }
 
-    public static JSONObject fetchSimulationData(int simulationID){
+    public static JSONArray fetchSimulationData(int simulationID){
         String url = getBaseUrl() + getGraphID() + "/sims/" + Integer.toString(simulationID);
         HttpResponse sims = sendGetRequest(url);
-        System.out.println(sims.getBody());
         JSONObject simData = convertToJSON(((String) sims.getBody()).replace("\\\"", "\""));
-        JSONObject dataVars;
+        JSONArray dataVars;
         try {
-            dataVars = simData.getJSONObject("executionResult").getJSONObject("dcrgraph").getJSONObject("runtime").getJSONObject("marking").getJSONObject("globalStore");
-            System.out.println(dataVars.getJSONArray("variable"));
+            dataVars = simData.getJSONObject("executionResult").getJSONObject("dcrgraph").getJSONObject("runtime").getJSONObject("marking").getJSONObject("globalStore").getJSONArray("variable");
         } catch (Exception ex) {
             dataVars = null;
-            System.out.println("No data found for simulation with ID: " + simulationID);
+            //System.out.println("No data found for simulation with ID: " + simulationID);
         }
 
         return dataVars;
     }
 
-    public static void executeActivityWithData(int simulationID, String activityID, String data){
+    public static HttpResponse executeActivityWithData(int simulationID, String activityID, String data){
 
+
+        Date date = new Date("ISO_LOCAL_DATE");
         String dataJson = null;
         if (!data.isEmpty()) {
-            dataJson = "{DataXML:\'<globalStore><variable id=\"" + activityID + "\" value=\"" + data+ "\" isNull=\"false\" type=\"int\"/></globalStore>\'}";
+            dataJson = "{DataXML:\'<globalStore><variable id=\"" + activityID + "\" value=\"" + data + "\" isNull=\"false\" type=\"int\"/>"+ date +"</globalStore>\'}";
         }
 
         String url = baseUrl + graphID + "/sims/" + simulationID + "/events/" + activityID;
 
         HttpResponse resp = sendPostRequest(url, dataJson);
+        if (resp.getStatus() == 200 || resp.getStatus() == 201 || resp.getStatus() == 204) {
+            System.out.println(activityID + " was executed for simulation:" + simulationID + " in graph: " + graphID);
+        } else {
+            System.out.println(activityID + " was probably not executed for simulation:" + simulationID + " in graph: " + graphID);
+        }
 
+        return resp;
     }
 
     public static void executeActivity(int simulationID, String activityID) {
-        executeActivityWithData(simulationID, activityID, null);
+        executeActivityWithData(simulationID, activityID, "");
+
     }
 
     private static HttpResponse sendGetRequest(String URL) {
@@ -104,7 +113,7 @@ public final class DCRGraphCommunicator {
                 jsonResp = Unirest.get(url).basicAuth(user, password).asString();
 
             } else if (requestType.equals("POST") || requestType.equals("post")) {
-                if (data.isEmpty()) {
+                if (data == null) {
                     jsonResp = Unirest
                             .post(url)
                             .basicAuth(user, password)
@@ -126,14 +135,13 @@ public final class DCRGraphCommunicator {
             } else if(jsonResp.getStatus() == 405 || jsonResp.getStatus() == 407) {
                 throw new Exception("Bad authentication, please check username and password");
             } else if(jsonResp.getStatus() == 500 || jsonResp.getStatus() == 501 || jsonResp.getStatus() == 504) {
-                throw new Exception("Internal error, maybe wrong request? please verify. Request: " + url);
+                throw new Exception("Internal error, maybe wrong request? please verify. Request: " + url + "\n" + jsonResp.getBody());
             }
         } catch(UnirestException UnirestEX) {
             System.out.println(UnirestEX.getMessage());
             System.out.println(Arrays.toString(UnirestEX.getStackTrace()));
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
-            //System.out.println(ex.getStackTrace().toString());
         }
         return null;
     }
@@ -141,6 +149,13 @@ public final class DCRGraphCommunicator {
         String bodyWithHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" + CharMatcher.is('\"').trimFrom(strWithXML);
 
         return XML.toJSONObject(bodyWithHeader);
+    }
+
+    private static String getTimeStamp(){
+        TimeZone tz = TimeZone.getTimeZone("UTC");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
+        df.setTimeZone(tz);
+        return df.format(new Date());
     }
 
     public static int getGraphID() {
@@ -173,5 +188,21 @@ public final class DCRGraphCommunicator {
 
     public static void setBaseUrl(String baseUrl) {
         DCRGraphCommunicator.baseUrl = baseUrl;
+    }
+
+    public static void setupTestSimulations() throws InterruptedException {
+        for(int i = 0; i < 5; i++){
+            int simID = createSimulation();
+            System.out.println(simID);
+            executeActivity(simID,"Activity1");
+
+            Thread.sleep(200);
+            String robotId = Integer.toString(4 - i);
+            executeActivityWithData(simID,"Activity2" , robotId);
+            String shelfId = Integer.toString(i);
+            executeActivityWithData(simID, "Activity10", shelfId);
+            executeActivityWithData(simID, "Activity11", shelfId);
+            executeActivityWithData(simID, "Activity14", shelfId);
+        }
     }
 }
