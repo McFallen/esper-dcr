@@ -2,6 +2,7 @@ package cep.subscriber;
 
 import java.util.Map;
 
+import cep.correlator.CorrelationService;
 import cep.event.AccelerationEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,16 +41,16 @@ public class ShakeEventSubscriber implements StatementSubscriber {
     public void update(Map<String, AccelerationEvent> eventMap) {
 
         // 1st Temperature in the Warning Sequence
-        AccelerationEvent acc = (AccelerationEvent) eventMap.get("myacc");
+        AccelerationEvent highLevelEvent = (AccelerationEvent) eventMap.get("myacc");
 
         StringBuilder sb = new StringBuilder();
         sb.append("--------------------------------------------------");
-        sb.append("\n- [WARNING] : TEMPERATURE SPIKE DETECTED = " + acc);
+        sb.append("\n- [WARNING] : TEMPERATURE SPIKE DETECTED = " + highLevelEvent);
         sb.append("\n--------------------------------------------------");
 
         LOG.debug(sb.toString());
 
         // Send event to correlator, to be processed
-
+        CorrelationService.notifyDesignatedRobotAboutShake(highLevelEvent);
     }
 }

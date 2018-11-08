@@ -71,12 +71,9 @@ public final class DCRGraphCommunicator {
     }
 
     public static HttpResponse executeActivityWithData(int simulationID, String activityID, String data){
-
-
-        Date date = new Date("ISO_LOCAL_DATE");
         String dataJson = null;
         if (!data.isEmpty()) {
-            dataJson = "{DataXML:\'<globalStore><variable id=\"" + activityID + "\" value=\"" + data + "\" isNull=\"false\" type=\"int\"/>"+ date +"</globalStore>\'}";
+            dataJson = "{DataXML:\'<globalStore><variable id=\"" + activityID + "\" value=\"" + data + "\" isNull=\"false\" type=\"int\"/></globalStore>\'}";
         }
 
         String url = baseUrl + graphID + "/sims/" + simulationID + "/events/" + activityID;

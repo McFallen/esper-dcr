@@ -37,19 +37,19 @@ public class StartDemo {
         DCRGraphCommunicator.setGraphID(graphID);
         // DCRGraphCommunicator.setupTestSimulations();
 
-        // Set up Correlator, load current sims.
+        // Set up Correlator, load current sims. Takes a small while
         CorrelationService.initCorrelationService();
 
 
 
         // Load simulations
         // Load spring config
-//        ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(new String[] { "application-context.xml" });
-  //      BeanFactory factory = (BeanFactory) appContext;
+        ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(new String[] { "application-context.xml" });
+        BeanFactory factory = (BeanFactory) appContext;
 
         // Start Demo
-    //    RandomAcceleratorEventGenerator generator = (RandomAcceleratorEventGenerator) factory.getBean("accelerationEventGenerator");
-      //  generator.startSendingReadings(noOfAcceleratorEvents);
+        RandomAcceleratorEventGenerator generator = (RandomAcceleratorEventGenerator) factory.getBean("accelerationEventGenerator");
+        generator.startSendingReadings(noOfAcceleratorEvents);
 
     }
 
