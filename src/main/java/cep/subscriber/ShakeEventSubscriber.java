@@ -30,7 +30,8 @@ public class ShakeEventSubscriber implements StatementSubscriber {
         String shakeEventExpression =
                 "SELECT * " +
                 "FROM AccelerationEvent myacc " +
-                "WHERE acceleration > " + SHAKE_EVENT_THRESHOLD;
+                "WHERE acceleration > " + SHAKE_EVENT_THRESHOLD +
+                "group by shelfID";
 
         return shakeEventExpression;
     }
