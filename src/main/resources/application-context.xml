@@ -11,8 +11,6 @@
 
 	<bean id="accelerationEventGenerator"
 		  class="cep.util.RandomAcceleratorEventGenerator" />
-	<bean id="temperatureEventGenerator"
-		  class="cep.util.RandomTemperatureEventGenerator" />
 
 
 </beans>

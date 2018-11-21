@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
 
 /**
  * Just a simple class to create a number of Random TemperatureEvents and pass them off to the
- * TemperatureEventHandler.
+ * AccelerationEventHandler.
  */
 @Component
 public class RandomAcceleratorEventGenerator {
@@ -24,7 +24,7 @@ public class RandomAcceleratorEventGenerator {
     private static Logger LOG = LoggerFactory.getLogger(cep.util.RandomAcceleratorEventGenerator.class);
 
     /**
-     * The TemperatureEventHandler - wraps the Esper engine and processes the Events
+     * The AccelerationEventHandler - wraps the Esper engine and processes the Events
      */
     @Autowired
     private AccelerationEventHandler accelerationEventHandler;
