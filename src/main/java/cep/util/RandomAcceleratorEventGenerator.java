@@ -43,13 +43,16 @@ public class RandomAcceleratorEventGenerator {
 
                 int count = 0;
                 while (count < noOfAccelerationEvents) {
-                    AccelerationEvent ve = new AccelerationEvent(new Random().nextInt(100), new Date(), count % 5);
+                    AccelerationEvent ve = new AccelerationEvent(new Random().nextInt(1000), new Date(System.currentTimeMillis() - Integer.toUnsignedLong((new Random().nextInt(1000)))), count % 1   );
                     accelerationEventHandler.handle(ve);
                     count++;
                     try {
                         Thread.sleep(200);
                     } catch (InterruptedException e) {
                         LOG.error("Thread Interrupted", e);
+                    }
+                    if (count % 10 == 0) {
+                       System.out.println(count);
                     }
                 }
 

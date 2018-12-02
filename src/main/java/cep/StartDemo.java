@@ -22,7 +22,7 @@ public class StartDemo {
      */
     public static void main(String[] args) throws InterruptedException {
 
-        int graphID = 8349;
+        int graphID = 8704;
         LOG.debug("Starting...");
         LOG.info("Using graph ID: " + graphID);
 
@@ -33,14 +33,12 @@ public class StartDemo {
         } else {
             noOfAcceleratorEvents = Long.valueOf(args[0]);
         }
-        // Set up DCR communicator
-        DCRGraphCommunicator.setGraphID(graphID);
-        // DCRGraphCommunicator.setupTestSimulations();
-
-        // Set up Correlator, load current sims. Takes a small while
-        CorrelationService.initCorrelationService();
 
 
+        // Both is needed to
+        DCRGraphCommunicator.setGraphID(graphID);// Set up DCR communicator
+        CorrelationService.initCorrelationService();// Set up Correlator, load current sims. Takes a small while
+//        DCRGraphCommunicator.setupTestSimulations();
 
         // Load simulations
         // Load spring config

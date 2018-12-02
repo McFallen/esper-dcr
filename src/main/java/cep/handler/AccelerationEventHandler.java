@@ -1,16 +1,16 @@
 package cep.handler;
 
-import cep.correlator.CorrelationService;
 import cep.event.AccelerationEvent;
+import cep.event.AccelerationShakeEvent;
+import cep.subscriber.ShakeEventSubscriber;
+import cep.subscriber.ShakeHighEventSubscriber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import cep.subscriber.StatementSubscriber;
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
@@ -30,14 +30,20 @@ public class AccelerationEventHandler implements InitializingBean{
     /** Esper service */
     private EPServiceProvider epService;
     private EPStatement shakeEventStatement;
-    private CorrelationService correlator;
+    private EPStatement shakeHighEventStatement;
+
     @Autowired
-    @Qualifier("shakeEventSubscriber")
-    private StatementSubscriber shakeEventSubscriber;
+    private ShakeEventSubscriber orderingSubscriber;
+
+    @Autowired
+    private ShakeEventSubscriber shakeEventSubscriber;
+
+    @Autowired
+    private ShakeHighEventSubscriber shakeHighEventSubscriber;
 
 
     /**
-     * Configure Esper Statement(s).
+     * Setup Esper environment.
      */
     public void initService() {
 
@@ -45,8 +51,9 @@ public class AccelerationEventHandler implements InitializingBean{
         Configuration config = new Configuration();
         config.addEventTypeAutoName("cep.event");
         epService = EPServiceProviderManager.getDefaultProvider(config);
-        this.correlator = null;
+
         createShakeCheckExpression();
+        createShakeHighCheckExpression();
 
     }
 
@@ -61,14 +68,41 @@ public class AccelerationEventHandler implements InitializingBean{
     }
 
     /**
+     *
+     */
+    private void createShakeHighCheckExpression() {
+
+        LOG.debug("create Shake High Check Expression");
+        shakeHighEventStatement = epService.getEPAdministrator().createEPL(shakeHighEventSubscriber.getStatement());
+        shakeHighEventStatement.setSubscriber(shakeHighEventSubscriber);
+    }
+    private void createOrderedStream() {
+
+        LOG.debug("create Shake High Check Expression");
+        shakeHighEventStatement = epService.getEPAdministrator().createEPL(orderingSubscriber.getStatement());
+        shakeHighEventStatement.setSubscriber(orderingSubscriber);
+    }
+
+    /**
      * Handle the incoming AccelerationEvent.
      */
     public void handle(AccelerationEvent event) {
 
-        LOG.debug(event.toString());
+        //LOG.debug(event.toString());
         epService.getEPRuntime().sendEvent(event);
 
     }
+
+    /**
+     * Handle the incoming AccelerationHighEvent.
+     */
+    public void handle(AccelerationShakeEvent event) {
+
+//        LOG.debug(event.toString());
+        epService.getEPRuntime().sendEvent(event);
+
+    }
+
 
     @Override
     public void afterPropertiesSet() {

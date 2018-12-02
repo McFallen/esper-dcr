@@ -14,13 +14,10 @@ public class AccelerationEvent {
     private Date timeOfReading;
 
     /**
-     * Single value constructor.
-     * @param value Temperature in Celsius.
-     */
-    /**
-     * Temeratur constructor.
-     * @param acceleration Temperature in Celsius
+     * Temperature constructor.
+     * @param acceleration Acceleration in m/s2
      * @param timeOfReading Time of Reading
+     * @param shelfID ID of the shelf it is collected at
      */
     public AccelerationEvent(int acceleration, Date timeOfReading, int shelfID) {
         this.acceleration = acceleration;
@@ -30,9 +27,9 @@ public class AccelerationEvent {
 
     /**
      * Get the Acceleration of the different directions.
-     * @return Temperature in Celsius
+     * @return Acceleration
      */
-    public double getAcceleration() {
+    public int getAcceleration() {
         return this.acceleration;
     }
 
@@ -40,8 +37,8 @@ public class AccelerationEvent {
      * Get time Temperature reading was taken.
      * @return Time of Reading
      */
-    public Date getTimeOfReading() {
-        return timeOfReading;
+    public long getTimeOfReading() {
+        return timeOfReading.getTime();
     }
 
     public int getShelfID() { return shelfID;}

@@ -12,5 +12,4 @@
 	<bean id="accelerationEventGenerator"
 		  class="cep.util.RandomAcceleratorEventGenerator" />
 
-
 </beans>

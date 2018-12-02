@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import cep.correlator.CorrelationService;
 import com.google.common.base.CharMatcher;
 import org.json.JSONObject;
 import org.json.XML;
@@ -80,7 +81,8 @@ public final class DCRGraphCommunicator {
 
         HttpResponse resp = sendPostRequest(url, dataJson);
         if (resp.getStatus() == 200 || resp.getStatus() == 201 || resp.getStatus() == 204) {
-            System.out.println(activityID + " was executed for simulation:" + simulationID + " in graph: " + graphID);
+            //System.out.println(activityID + " was executed for simulation:" + simulationID + " in graph: " + graphID);
+            informCorrelater(simulationID);
         } else {
             System.out.println(activityID + " was probably not executed for simulation:" + simulationID + " in graph: " + graphID);
         }
@@ -146,6 +148,11 @@ public final class DCRGraphCommunicator {
         String bodyWithHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" + CharMatcher.is('\"').trimFrom(strWithXML);
 
         return XML.toJSONObject(bodyWithHeader);
+    }
+
+    private static void informCorrelater(Integer simID){
+        JSONObject activities = fetchSimulationActivities(simID);
+        CorrelationService.updateActivities(simID, activities);
     }
 
     private static String getTimeStamp(){

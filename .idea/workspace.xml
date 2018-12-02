@@ -3,14 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="efd4c4fb-3e73-4a21-be8f-7d6571d22918" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/event/TemperatureEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/handler/TemperatureEventHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/CriticalEventSubscriber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/MonitorEventSubscriber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/WarningEventSubscriber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/StartDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/StartDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/translator/RawAcceleratorTranslater.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/util/RandomTemperatureEventGenerator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-context.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,42 +73,48 @@
     <session id="-1388355900">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.17" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2944" />
+          <entry key="dummy" value="16" />
+          <entry key="java" value="7520" />
           <entry key="name" value="4" />
-          <entry key="xml" value="69" />
+          <entry key="xml" value="85" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2944" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="XML" value="69" />
+          <entry key="JAVA" value="7520" />
+          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="XML" value="85" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="7" />
+          <entry key="class" value="2" />
+          <entry key="java" value="29" />
           <entry key="md" value="1" />
-          <entry key="xml" value="12" />
+          <entry key="xml" value="13" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="7" />
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="29" />
           <entry key="Markdown" value="1" />
-          <entry key="XML" value="12" />
+          <entry key="XML" value="13" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -148,35 +155,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/StartDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="856">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-724">
-              <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -184,8 +170,74 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="87" column="148" selection-start-line="87" selection-start-column="148" selection-end-line="87" selection-end-column="148" />
+            <state relative-caret-position="273">
+              <caret line="122" column="24" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="24" />
+              <folding>
+                <element signature="docComment;class#CorrelationService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="683">
+              <caret line="54" column="49" lean-forward="true" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+              <folding>
+                <element signature="e#896#911#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1036">
+              <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1305">
+              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,47 +248,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="41" column="62" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+            <state relative-caret-position="363">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -252,10 +265,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Rest</find>
-      <find>uni</find>
-      <find>tem</find>
-      <find>&quot;</find>
       <find>RandomTemperatureEventGenerator</find>
       <find>temp</find>
       <find>handle</find>
@@ -276,6 +285,16 @@
       <find>inter</find>
       <find>null</find>
       <find>no data</find>
+      <find>and</find>
+      <find>warning</find>
+      <find>accelerationEventHandler</find>
+      <find>sub</find>
+      <find>handl</find>
+      <find>spring</find>
+      <find>activityHash</find>
+      <find>And Her</find>
+      <find>List</find>
+      <find>System</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -303,13 +322,20 @@
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeCompositeSubscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-context.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/StartDemo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/OrderedStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/OrderingSubscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-context.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" />
       </list>
     </option>
@@ -321,10 +347,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-88" />
-    <option name="y" value="-17" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="134" />
+    <option name="y" value="35" />
+    <option name="width" value="1533" />
+    <option name="height" value="1765" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -352,6 +378,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -437,15 +465,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cep" type="462c0819:PsiDirectoryNode" />
-              <item name="translator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="esper-dcr" type="b2602c69:ProjectViewProjectNode" />
-              <item name="esper-dcr" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cep" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -459,14 +478,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542788276761" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543778720643" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -527,17 +544,23 @@
       <workItem from="1541765765657" duration="694000" />
       <workItem from="1542027179630" duration="4524000" />
       <workItem from="1542787682413" duration="594000" />
+      <workItem from="1542804340267" duration="1968000" />
+      <workItem from="1543326100616" duration="5154000" />
+      <workItem from="1543345617815" duration="3646000" />
+      <workItem from="1543429295064" duration="3481000" />
+      <workItem from="1543480657186" duration="10755000" />
+      <workItem from="1543761925990" duration="13653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103894000" />
+    <option name="totallyTimeSpent" value="142551000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="134" y="35" width="3066" height="1765" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17750533" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23975822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -546,16 +569,16 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Learn" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.39154014" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3279893" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.4221777" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3299933" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286334" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3279893" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -576,19 +599,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3/lib/maven-model-builder-3.3.9.jar!/org/apache/maven/model/pom-4.0.0.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="123" column="19" lean-forward="true" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ensembl/RestClient.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar!/org/apache/http/StatusLine.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/espertech/esper/4.7.0/esper-4.7.0.jar!/com/espertech/esper/client/EPServiceProviderManager.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.1.1.RELEASE/spring-beans-3.1.1.RELEASE.jar!/org/springframework/beans/factory/BeanFactory.class" />
     <entry file="file://$PROJECT_DIR$/esper-dcr.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -606,37 +616,13 @@
     <entry file="jar://C:/Program Files (x86)/Java/Java-8/src.zip!/java/util/Iterator.java" />
     <entry file="jar://C:/Program Files (x86)/Java/Java-8/src.zip!/java/util/concurrent/Executors.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/espertech/esper/4.7.0/esper-4.7.0.jar!/com/espertech/esper/client/EPServiceProvider.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/WarningEventSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomTemperatureEventGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/WarningEventSubscriber.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomTemperatureEventGenerator.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/espertech/esper/4.7.0/esper-4.7.0.jar!/com/espertech/esper/client/EPRuntime.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/MonitorEventSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/MonitorEventSubscriber.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20160212/json-20160212.jar!/org/json/JSONTokener.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20160212/json-20160212.jar!/org/json/XML.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/CriticalEventSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/CriticalEventSubscriber.java" />
     <entry file="file://$PROJECT_DIR$/.idea/.name">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
@@ -692,27 +678,7 @@
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/String.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/Java-8/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="163" column="11" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/translator/RawAcceleratorTranslater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/Java-8/src.zip!/java/util/Date.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/mashape/unirest/unirest-java/1.4.9/unirest-java-1.4.9.jar!/com/mashape/unirest/request/BaseRequest.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -723,17 +689,93 @@
     <entry file="file://$PROJECT_DIR$/src/test/resources/debug_log4j.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/TemperatureEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/TemperatureEventHandler.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
+        <state relative-caret-position="255">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/espertech/esper/4.7.0/esper-4.7.0.jar!/com/espertech/esper/client/EPStatement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+        <state relative-caret-position="-107">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-939">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/StatementSubscriber.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/translator/RawAcceleratorTranslater.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1036">
+          <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="122" column="24" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="24" />
+          <folding>
+            <element signature="docComment;class#CorrelationService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/OrderingSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -742,73 +784,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="62" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="87" column="148" selection-start-line="87" selection-start-column="148" selection-end-line="87" selection-end-column="148" />
+        <state relative-caret-position="282">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/TemperatureEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/TemperatureEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-724">
-          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#896#911#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cep/StartDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="856">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="54" column="49" lean-forward="true" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
         </state>
       </provider>
     </entry>
