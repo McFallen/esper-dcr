@@ -388,14 +388,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="esper-dcr" type="b2602c69:ProjectViewProjectNode" />
               <item name="esper-dcr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esper-dcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esper-dcr" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="esper-dcr" type="b2602c69:ProjectViewProjectNode" />
@@ -488,6 +491,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,7 +569,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142551000" />
+    <option name="totallyTimeSpent" value="142607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
