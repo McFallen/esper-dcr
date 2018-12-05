@@ -43,8 +43,8 @@ public class ShakeEventSubscriber {
         // Statement does not take time order into consideration
         String shakeEventExpression =
                 "select * " +
-                "from AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds) as highLevel " +
-                "WHERE acceleration > " + SHAKE_EVENT_THRESHOLD;
+                "from AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds) as highLevel, AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds).std:lastevent() as currentLatest " +
+                "WHERE highLevel.acceleration > " + SHAKE_EVENT_THRESHOLD + " AND " + "currentLatest.timeOfReading <= highLevel.timeOfReading";
 
         return shakeEventExpression;
     }
@@ -57,34 +57,25 @@ public class ShakeEventSubscriber {
         // 1st Temperature in the Warning Sequence
         AccelerationEvent highLevelEvent = (AccelerationEvent) eventMap.get("highLevel");
 
-        if (newestTimeStamp.containsKey(highLevelEvent.getShelfID())) {
-            System.out.println("Do we even get here");
-            if (newestTimeStamp.get(highLevelEvent.getShelfID()) < highLevelEvent.getTimeOfReading()) {
-                newestTimeStamp.put(highLevelEvent.getShelfID(), highLevelEvent.getTimeOfReading());
+        StringBuilder sb = new StringBuilder();
+        sb.append("--------------------------------------------------");
+        sb.append("\n- [WARNING] : ACCELARATION SPIKE DETECTED = " + highLevelEvent);
+        sb.append("\n- Incoming time: " + new Date(System.currentTimeMillis()));
+        sb.append("\n--------------------------------------------------");
 
-                StringBuilder sb = new StringBuilder();
-                sb.append("--------------------------------------------------");
-                sb.append("\n- [WARNING] : ACCELARATION SPIKE DETECTED = " + highLevelEvent);
-                sb.append("\n- Incoming time: " + new Date(System.currentTimeMillis()));
-                sb.append("\n--------------------------------------------------");
+        LOG.debug(sb.toString());
 
-                LOG.debug(sb.toString());
+        // Send event to correlator, to be processed
+        // CorrelationService.shakeDetected(highLevelEvent);
 
-                // Send event to correlator, to be processed
-                // CorrelationService.shakeDetected(highLevelEvent);
+        AccelerationShakeEvent rawEvent =
+                new AccelerationShakeEvent(
+                        highLevelEvent.getAcceleration(),
+                        new Date(highLevelEvent.getTimeOfReading()),
+                        highLevelEvent.getShelfID()
+                );
 
-                AccelerationShakeEvent rawEvent =
-                        new AccelerationShakeEvent(
-                                highLevelEvent.getAcceleration(),
-                                new Date(highLevelEvent.getTimeOfReading()),
-                                highLevelEvent.getShelfID()
-                        );
+        accelerationEventHandler.handle(rawEvent);
 
-                accelerationEventHandler.handle(rawEvent);
-
-            }
-        } else {
-            newestTimeStamp.put(highLevelEvent.getShelfID(), highLevelEvent.getTimeOfReading());
-        }
     }
 }

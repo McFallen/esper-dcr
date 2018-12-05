@@ -28,7 +28,7 @@ public class ShakeHighEventSubscriber {
 
         // Statement does not take time order into consideration
         String shakeHighEventExpression =
-                "SELECT * FROM AccelerationShakeEvent myacc " +
+                "SELECT * FROM AccelerationShakeEvent as highLevelEvent " +
                 "WHERE acceleration > " + SHAKE_EVENT_THRESHOLD;
 
         return shakeHighEventExpression;
@@ -40,8 +40,8 @@ public class ShakeHighEventSubscriber {
     public void update(Map<String, AccelerationShakeEvent> eventMap) {
 
         // 1st Temperature in the Warning Sequence
-
-        AccelerationShakeEvent event = (AccelerationShakeEvent) eventMap.get("myacc");
+        System.out.println(eventMap);
+        AccelerationShakeEvent event = (AccelerationShakeEvent) eventMap.get("highLevelEvent");
 
         StringBuilder sb = new StringBuilder();
         sb.append("--------------------------------------------------");
