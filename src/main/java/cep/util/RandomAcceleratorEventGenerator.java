@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Just a simple class to create a number of Random TemperatureEvents and pass them off to the
+ * Just a simple class to create a number of Random AccelerationEvents and pass them off to the
  * AccelerationEventHandler.
  */
 @Component
@@ -30,7 +30,7 @@ public class RandomAcceleratorEventGenerator {
     private AccelerationEventHandler accelerationEventHandler;
 
     /**
-     * Creates simple random Temperature events and lets the implementation class handle them.
+     * Creates simple random Acceleration events and lets the implementation class handle them.
      */
     public void startSendingReadings(final long noOfAccelerationEvents) {
 
@@ -43,7 +43,12 @@ public class RandomAcceleratorEventGenerator {
 
                 int count = 0;
                 while (count < noOfAccelerationEvents) {
-                    AccelerationEvent ve = new AccelerationEvent(new Random().nextInt(1000), new Date(System.currentTimeMillis() - Integer.toUnsignedLong((new Random().nextInt(1000)))), count % 1   );
+                    AccelerationEvent ve =
+                            new AccelerationEvent(
+                                    new Random().nextInt(1000),
+                                    new Date(System.currentTimeMillis() - Integer.toUnsignedLong((new Random().nextInt(1000)))),
+                                    count % 4
+                            );
                     accelerationEventHandler.handle(ve);
                     count++;
                     try {
@@ -51,9 +56,8 @@ public class RandomAcceleratorEventGenerator {
                     } catch (InterruptedException e) {
                         LOG.error("Thread Interrupted", e);
                     }
-                    if (count % 10 == 0) {
-                       System.out.println(count);
-                    }
+                    // Prints progress for amount of produced acceleration events
+                    if (count % 10 == 0) { System.out.println(count); }
                 }
 
             }

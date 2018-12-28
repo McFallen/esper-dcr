@@ -43,7 +43,8 @@ public class ShakeEventSubscriber {
         // Statement does not take time order into consideration
         String shakeEventExpression =
                 "select * " +
-                "from AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds) as highLevel, AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds).std:lastevent() as currentLatest " +
+                "from AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds) as highLevel, " +
+                        "AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds).std:lastevent() as currentLatest " +
                 "WHERE highLevel.acceleration > " + SHAKE_EVENT_THRESHOLD + " AND " + "currentLatest.timeOfReading <= highLevel.timeOfReading";
 
         return shakeEventExpression;
@@ -54,7 +55,7 @@ public class ShakeEventSubscriber {
      */
     public void update(Map<String, AccelerationEvent> eventMap) {
 
-        // 1st Temperature in the Warning Sequence
+
         AccelerationEvent highLevelEvent = (AccelerationEvent) eventMap.get("highLevel");
 
         StringBuilder sb = new StringBuilder();

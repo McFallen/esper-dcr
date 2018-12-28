@@ -22,7 +22,11 @@ public class StartDemo {
      */
     public static void main(String[] args) throws InterruptedException {
 
-        int graphID = 8704;
+        int graphID;
+        //graphID= 8704;
+        //graphID = 8349;
+        //graphID = 8745;
+        graphID = 8840;
         LOG.debug("Starting...");
         LOG.info("Using graph ID: " + graphID);
 
@@ -37,8 +41,12 @@ public class StartDemo {
 
         // Both is needed to
         DCRGraphCommunicator.setGraphID(graphID);// Set up DCR communicator
+        //DCRGraphCommunicator.setupTestSimulations();
+
         CorrelationService.initCorrelationService();// Set up Correlator, load current sims. Takes a small while
-//        DCRGraphCommunicator.setupTestSimulations();
+
+
+
 
         // Load simulations
         // Load spring config

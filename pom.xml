@@ -8,7 +8,7 @@
 	<description>Simple demo of Complex Event Processing (CEP) using the ESPER libraries.</description>
 
 	<properties>
-		<esper-version>4.7.0</esper-version>
+		<esper-version>7.1.0</esper-version>
 		<spring-version>3.1.1.RELEASE</spring-version>
 	</properties>
 

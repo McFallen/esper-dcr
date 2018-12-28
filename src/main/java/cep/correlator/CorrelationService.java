@@ -11,8 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
-import static java.lang.System.exit;
-
 /**
  * Correlates the process to given events
  */
@@ -21,10 +19,8 @@ public class CorrelationService {
     private static Logger LOG = LoggerFactory.getLogger(CorrelationService.class);
 
     private static HashMap simHash;
-    private static HashMap<Integer, JSONObject> activityHash;
+    private static HashMap<Integer, JSONObject> activityHash = new HashMap<Integer, JSONObject>();
 
-    // Activities with simulations belonging to them, should make it easier if there is multiple listeners as they are bundled
-    private static HashMap<String, JSONObject> variableHash;
     private static HashMap<String, HashMap<String, List<Integer>>> simVarHash;
     // No pretty way to do bidirectional map. Can possibly be optimized with a tool, for now we leave hardcoded
     private static HashMap<String, String> activityIDtoVariable = new HashMap<String, String>(){ { put("robotID", "Activity2");put("shelfID", "Activity10"); } };
@@ -33,15 +29,17 @@ public class CorrelationService {
     // Which activity is enabled for simulations
     // Simulations can be found and notified/published to
     // Shelf-ID, to Robot-ID ot sim-ID
-    private static HashMap<String, Set<String>> pubToSub = new HashMap<String, Set<String>>();
+    private static HashMap<String, HashMap<String, Set<String>>> pubToSub = new HashMap<String, HashMap<String, Set<String>>>(){ { put("Activity10", new HashMap<String, Set<String>>()); } };
 
     public static void initCorrelationService() {
         simHash = DCRGraphCommunicator.fetchSimulationsIndexed();
-        activityHash = new HashMap<Integer, JSONObject>();
-        initActivityAndVariableHash();
+
+        initCorrelations();
+        System.out.println(pubToSub);
+        System.out.println(activityHash);
     }
 
-    private static void initActivityAndVariableHash() {
+    private static void initCorrelations() {
 
         for (Object key : simHash.keySet()) {
             Integer simId = (Integer) key;
@@ -53,18 +51,21 @@ public class CorrelationService {
                     // Locate the relevant IDs
                     JSONObject varr = (JSONObject) var;
                     String activityID = (String) ((JSONObject) var).get("id");
-                    if (activityID.equals(activityIDtoVariable.get("shelfID"))) {
-
+                    if (pubToSub.keySet().contains(activityID)) {
                         // build/update entries for pub/sub for shelves
-                        if (pubToSub.containsKey(varr.get("value").toString())) {
-                            Set<String> oldSubs = pubToSub.get(varr.get("value").toString());
+                        if (!pubToSub.get(activityID).isEmpty() &&
+                            pubToSub.get(activityID).containsKey(varr.get("value").toString())) {
+                            Set<String> oldSubs = pubToSub.get(activityID).get(varr.get("value").toString());
                             oldSubs.add(key.toString());
                             Set<String> updatedSubs = oldSubs;
-                            pubToSub.put(((JSONObject) var).get("value").toString(), updatedSubs);
+                            pubToSub.get(activityID).put(((JSONObject) var).get("value").toString(), updatedSubs);
                         } else {
-                            Set<String> entry = new HashSet<String>();
-                            entry.add(simId.toString());
-                            pubToSub.put(((JSONObject) var).get("value").toString(), entry);
+
+                            Set<String> emptySimHash = new HashSet<String>();
+                            emptySimHash.add(simId.toString());
+                            HashMap<String, Set<String>> entry = new HashMap<String, Set<String>>();
+
+                            pubToSub.get(activityID).put(((JSONObject) var).get("value").toString(), emptySimHash);
                         }
                         // We don't care for other ID's, so we can just break out of the loop
                         break;
@@ -81,8 +82,12 @@ public class CorrelationService {
     }
 
     public static void updateActivities(Integer simID, JSONObject activities){
-        activityHash.put(simID, activities);
-        LOG.debug("Activities updated for simulation: " + simID);
+        if (activities != null) {
+            activityHash.put(simID, activities);
+            LOG.debug("Activities updated for simulation: " + simID);
+        } else {
+            LOG.info("No activities executed for process instance");
+        }
     }
 
 
@@ -91,7 +96,7 @@ public class CorrelationService {
     }
     // Find which simulations that needs to be notified and pass it to the communicator
     public static void shakeDetected(AccelerationEvent event){
-        Set<String> listeners = pubToSub.get(Integer.toString(event.getShelfID()));
+        Set<String> listeners = pubToSub.get("shelfID").get(Integer.toString(event.getShelfID()));
 
         // Notify each simulation
         for (String listener : listeners) {
@@ -100,15 +105,23 @@ public class CorrelationService {
     }
     public static void shakeDetected(AccelerationShakeEvent event){
         String activity = "Activity14";
-        Set<String> listeners = pubToSub.get(Integer.toString(event.getShelfID()));
+
+        // Get the node for which the data is contained
+        Set<String> listeners = pubToSub.get("Activity10").get(Integer.toString(event.getShelfID()));
+
 
         // Notify each simulation
-        for (String listener : listeners) {
 
-            // Check if activity is executable
-            if (checkActivityEnabled(Integer.parseInt(listener), activity)) {
-                DCRGraphCommunicator.executeActivityWithData(Integer.parseInt(listener), "Activity14", Integer.toString((int) event.getAcceleration()));
+        if(listeners != null) {
+            for (String listener : listeners) {
+
+                // Check if activity is executable
+                if (checkActivityEnabled(Integer.parseInt(listener), activity)) {
+                    DCRGraphCommunicator.executeActivityWithData(Integer.parseInt(listener), "Activity14", Integer.toString((int) event.getAcceleration()));
+                }
             }
+        } else {
+            LOG.info("No correlated process instance found for the High-Level event");
         }
     }
 

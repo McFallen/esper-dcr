@@ -50,7 +50,6 @@ public final class DCRGraphCommunicator {
     public static JSONObject fetchSimulationActivities(int simulationID){
         String url = getBaseUrl() + getGraphID() + "/sims/" + Integer.toString(simulationID) + "/events?filter=enabled-or-pending";
         HttpResponse sims = sendGetRequest(url);
-
         JSONObject simActivities = convertToJSON(((String) sims.getBody()).replace("\\\"", "\""));
 
         return simActivities;
@@ -59,6 +58,7 @@ public final class DCRGraphCommunicator {
     public static JSONArray fetchSimulationData(int simulationID){
         String url = getBaseUrl() + getGraphID() + "/sims/" + Integer.toString(simulationID);
         HttpResponse sims = sendGetRequest(url);
+        System.out.println(sims.getBody());
         JSONObject simData = convertToJSON(((String) sims.getBody()).replace("\\\"", "\""));
         JSONArray dataVars;
         try {
@@ -201,12 +201,10 @@ public final class DCRGraphCommunicator {
             executeActivity(simID,"Activity1");
 
             Thread.sleep(200);
-            String robotId = Integer.toString(4 - i);
+            String robotId = Integer.toString(i);
             executeActivityWithData(simID,"Activity2" , robotId);
             String shelfId = Integer.toString(i);
             executeActivityWithData(simID, "Activity10", shelfId);
-            executeActivityWithData(simID, "Activity11", shelfId);
-            executeActivityWithData(simID, "Activity14", shelfId);
         }
     }
 }
