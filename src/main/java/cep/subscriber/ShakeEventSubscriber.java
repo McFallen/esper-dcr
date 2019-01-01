@@ -24,7 +24,7 @@ public class ShakeEventSubscriber {
     private static Logger LOG = LoggerFactory.getLogger(ShakeEventSubscriber.class);
 
     /** If shake is over  1 m/s^2*/
-    private static final String SHAKE_EVENT_THRESHOLD = "800";
+    private static final String SHAKE_EVENT_THRESHOLD = "80";
     private static HashMap<Integer,Long> newestTimeStamp = new HashMap<Integer, Long>();
     @Autowired
     @Qualifier("accelerationEventHandler")
@@ -33,13 +33,7 @@ public class ShakeEventSubscriber {
     /**
      */
     public String getStatement() {
-
-/*        String shakeEventExpression =
-                "INSERT rstream into ArrivalTimeOrderedStream " +
-                        "SELECT rstream * " +
-                        "FROM AccelerationEvent.ext:time_order(timeOfReading, 1 msec) myacc " +
-                        "WHERE acceleration > " + SHAKE_EVENT_THRESHOLD;
-*/
+        
         // Statement does not take time order into consideration
         String shakeEventExpression =
                 "select * " +
