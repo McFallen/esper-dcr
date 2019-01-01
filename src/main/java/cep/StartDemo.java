@@ -56,7 +56,6 @@ public class StartDemo {
         // Start Demo
         RandomAcceleratorEventGenerator generator = (RandomAcceleratorEventGenerator) factory.getBean("accelerationEventGenerator");
         generator.startSendingReadings(noOfAcceleratorEvents);
-
     }
 
 }

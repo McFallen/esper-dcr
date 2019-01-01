@@ -45,9 +45,9 @@ public class RandomAcceleratorEventGenerator {
                 while (count < noOfAccelerationEvents) {
                     AccelerationEvent ve =
                             new AccelerationEvent(
-                                    new Random().nextInt(1000),
+                                    new Random().nextInt(100),
                                     new Date(System.currentTimeMillis() - Integer.toUnsignedLong((new Random().nextInt(1000)))),
-                                    count % 4
+                                    count % 5
                             );
                     accelerationEventHandler.handle(ve);
                     count++;

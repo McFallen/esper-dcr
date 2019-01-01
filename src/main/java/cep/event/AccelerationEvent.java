@@ -13,16 +13,18 @@ public class AccelerationEvent {
     /** Time acceleration reading was taken. */
     private Date timeOfReading;
 
+    private String unit;
     /**
      * Temperature constructor.
      * @param acceleration Acceleration in m/s2
      * @param timeOfReading Time of Reading
      * @param shelfID ID of the shelf it is collected at
      */
-    public AccelerationEvent(int acceleration, Date timeOfReading, int shelfID) {
+    public AccelerationEvent(int acceleration, Date timeOfReading, int shelfID, String unit) {
         this.acceleration = acceleration;
         this.timeOfReading = timeOfReading;
         this.shelfID = shelfID;
+        this.unit = unit;
     }
 
     /**
@@ -44,7 +46,7 @@ public class AccelerationEvent {
     public int getShelfID() { return shelfID;}
     @Override
     public String toString() {
-        return "AccelerationEvent [" + acceleration + "cm/s^2, " + timeOfReading.toString() + ", " + shelfID + "]";
+        return "AccelerationEvent [" + acceleration + " " + unit + ", " + timeOfReading.toString() + ", " + shelfID + "]";
     }
 
 }
