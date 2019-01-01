@@ -60,7 +60,7 @@ public class ShakeEventSubscriber {
 
         StringBuilder sb = new StringBuilder();
         sb.append("--------------------------------------------------");
-        sb.append("\n- [WARNING] : ACCELARATION SPIKE DETECTED = " + highLevelEvent);
+        sb.append("\n- [WARNING] : ACCELERATION SPIKE DETECTED = " + highLevelEvent);
         sb.append("\n- Incoming time: " + new Date(System.currentTimeMillis()));
         sb.append("\n--------------------------------------------------");
 
@@ -73,7 +73,8 @@ public class ShakeEventSubscriber {
                 new AccelerationShakeEvent(
                         highLevelEvent.getAcceleration(),
                         new Date(highLevelEvent.getTimeOfReading()),
-                        highLevelEvent.getShelfID()
+                        highLevelEvent.getShelfID(),
+                        highLevelEvent.getUnit()
                 );
 
         accelerationEventHandler.handle(rawEvent);

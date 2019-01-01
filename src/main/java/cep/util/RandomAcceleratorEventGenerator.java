@@ -47,7 +47,8 @@ public class RandomAcceleratorEventGenerator {
                             new AccelerationEvent(
                                     new Random().nextInt(100),
                                     new Date(System.currentTimeMillis() - Integer.toUnsignedLong((new Random().nextInt(1000)))),
-                                    count % 5
+                                    count % 5,
+                                    "mm/s"
                             );
                     accelerationEventHandler.handle(ve);
                     count++;

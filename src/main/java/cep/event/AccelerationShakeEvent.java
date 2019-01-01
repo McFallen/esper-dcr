@@ -47,6 +47,7 @@ public class AccelerationShakeEvent {
     }
 
     public int getShelfID() { return shelfID;}
+    public String getUnit() { return unit;}
     @Override
     public String toString() {
         return "AccelerationShakeEvent [" + acceleration + " " + unit + ", " + timeOfReading.toString() + ", " + shelfID + "]";
