@@ -15,10 +15,11 @@ public class AccelerationEvent {
 
     private String unit;
     /**
-     * Temperature constructor.
-     * @param acceleration Acceleration in m/s2
+     * Acceleration constructor.
+     * @param acceleration Acceleration
      * @param timeOfReading Time of Reading
-     * @param shelfID ID of the shelf it is collected at
+     * @param shelfID ID of the shelf it is collected
+     * @param unit Unit of the measurement
      */
     public AccelerationEvent(int acceleration, Date timeOfReading, int shelfID, String unit) {
         this.acceleration = acceleration;
@@ -36,7 +37,7 @@ public class AccelerationEvent {
     }
 
     /**
-     * Get time Temperature reading was taken.
+     * Get time Acceleration reading was taken.
      * @return Time of Reading
      */
     public long getTimeOfReading() {

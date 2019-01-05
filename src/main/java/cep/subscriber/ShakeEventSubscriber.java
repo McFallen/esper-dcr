@@ -33,13 +33,13 @@ public class ShakeEventSubscriber {
     /**
      */
     public String getStatement() {
-        
+
         // Statement does not take time order into consideration
         String shakeEventExpression =
                 "select * " +
-                "from AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds) as highLevel, " +
+                "from AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds) as incEvent, " +
                         "AccelerationEvent.std:groupwin(shelfID).ext:time_order(timeOfReading, 1 seconds).std:lastevent() as currentLatest " +
-                "WHERE highLevel.acceleration > " + SHAKE_EVENT_THRESHOLD + " AND " + "currentLatest.timeOfReading <= highLevel.timeOfReading";
+                "WHERE incEvent.acceleration > " + SHAKE_EVENT_THRESHOLD + " AND " + "currentLatest.timeOfReading <= incEvent.timeOfReading";
 
         return shakeEventExpression;
     }
@@ -50,11 +50,12 @@ public class ShakeEventSubscriber {
     public void update(Map<String, AccelerationEvent> eventMap) {
 
 
-        AccelerationEvent highLevelEvent = (AccelerationEvent) eventMap.get("highLevel");
+        AccelerationEvent highLevelEvent = (AccelerationEvent) eventMap.get("incEvent");
 
         StringBuilder sb = new StringBuilder();
         sb.append("--------------------------------------------------");
-        sb.append("\n- [WARNING] : ACCELERATION SPIKE DETECTED = " + highLevelEvent);
+        sb.append("\n- [WARNING] : ACCELERATION SPIKE DETECTED = ");
+        sb.append("\n- " + highLevelEvent);
         sb.append("\n- Incoming time: " + new Date(System.currentTimeMillis()));
         sb.append("\n--------------------------------------------------");
 
@@ -68,7 +69,8 @@ public class ShakeEventSubscriber {
                         highLevelEvent.getAcceleration(),
                         new Date(highLevelEvent.getTimeOfReading()),
                         highLevelEvent.getShelfID(),
-                        highLevelEvent.getUnit()
+                        highLevelEvent.getUnit(),
+                        highLevelEvent
                 );
 
         accelerationEventHandler.handle(rawEvent);

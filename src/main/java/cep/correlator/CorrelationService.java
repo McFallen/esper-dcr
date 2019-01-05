@@ -35,8 +35,6 @@ public class CorrelationService {
         simHash = DCRGraphCommunicator.fetchSimulationsIndexed();
 
         initCorrelations();
-        System.out.println(pubToSub);
-        System.out.println(activityHash);
     }
 
     private static void initCorrelations() {

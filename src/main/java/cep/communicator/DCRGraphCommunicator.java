@@ -58,7 +58,7 @@ public final class DCRGraphCommunicator {
     public static JSONArray fetchSimulationData(int simulationID){
         String url = getBaseUrl() + getGraphID() + "/sims/" + Integer.toString(simulationID);
         HttpResponse sims = sendGetRequest(url);
-        System.out.println(sims.getBody());
+
         JSONObject simData = convertToJSON(((String) sims.getBody()).replace("\\\"", "\""));
         JSONArray dataVars;
         try {
@@ -197,7 +197,7 @@ public final class DCRGraphCommunicator {
     public static void setupTestSimulations() throws InterruptedException {
         for(int i = 0; i < 5; i++){
             int simID = createSimulation();
-            System.out.println(simID);
+
             executeActivity(simID,"Activity1");
 
             Thread.sleep(200);

@@ -39,8 +39,6 @@ public class ShakeHighEventSubscriber {
      */
     public void update(Map<String, AccelerationShakeEvent> eventMap) {
 
-        // 1st Temperature in the Warning Sequence
-        System.out.println(eventMap);
         AccelerationShakeEvent event = (AccelerationShakeEvent) eventMap.get("highLevelEvent");
 
         StringBuilder sb = new StringBuilder();

@@ -14,32 +14,34 @@ public class AccelerationShakeEvent {
     private Date timeOfReading;
 
     private String unit;
+
+
+    private AccelerationEvent origin;
     /**
-     * Single value constructor.
-     * @param value Temperature in Celsius.
-     */
-    /**
-     * Temerature constructor.
-     * @param acceleration Temperature in Celsius
+     * Acceleration constructor.
+     * @param acceleration Acceleration
      * @param timeOfReading Time of Reading
+     * @param shelfID ID of the shelf it is collected
+     * @param unit Unit of the measurement
      */
-    public AccelerationShakeEvent(int acceleration, Date timeOfReading, int shelfID, String unit) {
+    public AccelerationShakeEvent(int acceleration, Date timeOfReading, int shelfID, String unit, AccelerationEvent origin) {
         this.acceleration = acceleration;
         this.timeOfReading = timeOfReading;
         this.shelfID = shelfID;
         this.unit = unit;
+        this.origin = origin;
     }
 
     /**
      * Get the Acceleration of the different directions.
-     * @return Temperature in Celsius
+     * @return Acceleration
      */
     public double getAcceleration() {
         return this.acceleration;
     }
 
     /**
-     * Get time Temperature reading was taken.
+     * Get time Acceleration reading was taken.
      * @return Time of Reading
      */
     public long getTimeOfReading() {
@@ -48,6 +50,7 @@ public class AccelerationShakeEvent {
 
     public int getShelfID() { return shelfID;}
     public String getUnit() { return unit;}
+
     @Override
     public String toString() {
         return "AccelerationShakeEvent [" + acceleration + " " + unit + ", " + timeOfReading.toString() + ", " + shelfID + "]";

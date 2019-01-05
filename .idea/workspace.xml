@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efd4c4fb-3e73-4a21-be8f-7d6571d22918" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,27 +119,27 @@
     <session id="-124143207">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="3" />
-          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.14" value="4" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="3" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="11" />
-          <entry key="java" value="5660" />
+          <entry key="java" value="5916" />
           <entry key="xml" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5660" />
+          <entry key="JAVA" value="5916" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="XML" value="22" />
         </counts>
@@ -162,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+            <state relative-caret-position="1020">
+              <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -171,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+            <state relative-caret-position="85">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,11 +187,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+            <state relative-caret-position="833">
+              <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -192,8 +199,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="765">
+              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -201,8 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/StartDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="466">
+              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -213,17 +220,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+            <state relative-caret-position="2074">
+              <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+            <state relative-caret-position="816">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
@@ -231,8 +238,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+            <state relative-caret-position="2839">
+              <caret line="199" selection-start-line="199" selection-end-line="199" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -252,8 +259,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="45" column="46" lean-forward="true" selection-start-line="45" selection-start-column="46" selection-end-line="46" selection-end-column="43" />
+            <state relative-caret-position="629">
+              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -269,11 +276,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
-      <find>upda</find>
-      <find>updat</find>
-      <find>Critical Temperature</find>
-      <find>what</find>
       <find>c</find>
       <find>cor</find>
       <find>marking</find>
@@ -299,6 +301,11 @@
       <find>57182</find>
       <find>5718</find>
       <find>activityHash</find>
+      <find>no corre</find>
+      <find>tempe</find>
+      <find>Tempe</find>
+      <find>Temp</find>
+      <find>temp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -331,17 +338,17 @@
         <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/OrderedStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/OrderingSubscriber.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/StartDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java" />
       </list>
     </option>
   </component>
@@ -352,7 +359,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1954" />
+    <option name="x" value="47" />
     <option name="y" value="-17" />
     <option name="width" value="1533" />
     <option name="height" value="1100" />
@@ -383,7 +390,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -480,13 +487,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545149788047" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546379421565" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -560,18 +567,19 @@
       <workItem from="1545146926226" duration="1877000" />
       <workItem from="1545211360671" duration="1246000" />
       <workItem from="1545985331866" duration="22371000" />
-      <workItem from="1546358087903" duration="512000" />
+      <workItem from="1546358087903" duration="5367000" />
+      <workItem from="1546598889363" duration="355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181966000" />
+    <option name="totallyTimeSpent" value="187176000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19936034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20149253" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -581,7 +589,7 @@
       <window_info id="Learn" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3279893" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.35249457" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.35249457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -751,17 +759,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="85">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+        <state relative-caret-position="833">
+          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2839">
+          <caret line="199" selection-start-line="199" selection-end-line="199" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -772,61 +793,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/communicator/DCRGraphCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cep/StartDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="466">
+          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeHighEventSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="45" column="46" lean-forward="true" selection-start-line="45" selection-start-column="46" selection-end-line="46" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cep/subscriber/ShakeEventSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+        <state relative-caret-position="1020">
+          <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cep/util/RandomAcceleratorEventGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/handler/AccelerationEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+        <state relative-caret-position="765">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/correlator/CorrelationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cep/event/AccelerationShakeEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>

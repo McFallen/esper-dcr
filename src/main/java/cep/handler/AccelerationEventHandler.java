@@ -76,12 +76,6 @@ public class AccelerationEventHandler implements InitializingBean{
         shakeHighEventStatement = epService.getEPAdministrator().createEPL(shakeHighEventSubscriber.getStatement());
         shakeHighEventStatement.setSubscriber(shakeHighEventSubscriber);
     }
-    private void createOrderedStream() {
-
-        LOG.debug("create Shake High Check Expression");
-        shakeHighEventStatement = epService.getEPAdministrator().createEPL(orderingSubscriber.getStatement());
-        shakeHighEventStatement.setSubscriber(orderingSubscriber);
-    }
 
     /**
      * Handle the incoming AccelerationEvent.
